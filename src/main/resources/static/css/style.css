@@ -1,0 +1,56 @@
+body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Montserrat', sans-serif;
+}
+nav {
+    font-size: 20px;
+    text-transform: uppercase;
+    padding: 20px 0 20px 0;
+    background-color: rgb(10, 71, 237);
+}
+nav li {
+    display: inline;
+    padding: 5px;
+    margin: 5px;
+}
+nav #brand {
+    font-weight: bolder;
+    border-right: 3px white solid;
+    margin-right: 5px;
+}
+nav ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+}
+nav a {
+    text-decoration: none;
+    color: white;
+}
+nav form {
+    display: inline;
+    color: white;
+}
+nav input {
+    padding: 5px;
+}
+
+article {
+    margin: 10px 20% 10px 20%;
+}
+
+footer {
+    color: white;
+    background-color: rgb(10, 71, 237);
+    text-align: center;
+    padding-top: 10px;
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    height: 100px;
+    width: 100%;
+}
+footer span {
+    font-weight: bolder;
+}
