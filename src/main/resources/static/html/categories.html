@@ -5,9 +5,12 @@
     <link rel="stylesheet" href="/css/style.css">
     <link rel="preconnect" href="https://fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css2?family=Montserrat&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Lato&display=swap" rel="stylesheet">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="/scripts/scripts.js"></script>
     <title>WTT Book Library</title>
 </head>
-<body>
+<body onload="fetch_data ();">
 <nav>
     <ul>
         <li id="brand"><a href="../index.html">WTT Book Library</a></li>
@@ -25,6 +28,26 @@
         </li>
     </ul>
 </nav>
+
+<article>
+    <div id="categories">
+        <h1>Category list</h1>
+        <ul id="category-list">
+            <li class="category-element">
+                Category
+            </li>
+            <li class="category-element">
+                Category
+            </li>
+            <li class="category-element">
+                Category
+            </li>
+            <li class="category-element">
+                Category
+            </li>
+        </ul>
+    </div>
+</article>
 
 <footer>
     <p>Book Library Management Platform made by <span>Michał Wesoły</span> for <span>Wunderman Thompson Technology ©</span></p>

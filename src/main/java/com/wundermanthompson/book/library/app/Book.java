@@ -1,96 +1,91 @@
 package com.wundermanthompson.book.library.app;
 
-import java.nio.file.Path;
+import com.fasterxml.jackson.annotation.JsonAutoDetect;
 
+import java.util.ArrayList;
+
+@JsonAutoDetect(fieldVisibility = JsonAutoDetect.Visibility.ANY)
 public class Book {
-    public String getISBN_13() {
-        return ISBN_13;
+    public Book.volumeInfo getVolumeInfo() {
+        return volumeInfo;
     }
 
-    public String getISBN_10() {
-        return ISBN_10;
-    }
+    private volumeInfo volumeInfo;
 
-    public void setISBN(String ISBN_13) {
-        this.ISBN_13 = ISBN_13;
-        this.ISBN_10 = ISBN_13.substring(2, 12);
-    }
+    static class volumeInfo {
+        public String getTitle() {
+            return title;
+        }
 
-    public String getTitle() {
-        return title;
-    }
+        public ArrayList<String> getAuthors() {
+            return authors;
+        }
 
-    public void setTitle(String title) {
-        this.title = title;
-    }
+        public String getPublisher() {
+            return publisher;
+        }
 
-    public String getAuthor() {
-        return author;
-    }
+        public String getPublishedDate() {
+            return publishedDate;
+        }
 
-    public void setAuthor(String author) {
-        this.author = author;
-    }
+        public String getDescription() {
+            return description;
+        }
 
-    public String getPublisher() {
-        return publisher;
-    }
+        public ArrayList<Book.volumeInfo.industryIdentifiers> getIndustryIdentifiers() {
+            return industryIdentifiers;
+        }
 
-    public void setPublisher(String publisher) {
-        this.publisher = publisher;
-    }
+        public int getPageCount() {
+            return pageCount;
+        }
 
-    public String getLanguage() {
-        return language;
-    }
+        public ArrayList<String> getCategories() {
+            return categories;
+        }
 
-    public void setLanguage(String language) {
-        this.language = language;
-    }
+        public int getAverageRating() {
+            return averageRating;
+        }
 
-    public Path getSmall_thumbnail() {
-        return small_thumbnail;
-    }
+        public int getRatingsCount() {
+            return ratingsCount;
+        }
 
-    public void setSmall_thumbnail(Path small_thumbnail) {
-        this.small_thumbnail = small_thumbnail;
-    }
+        public String getMaturityRating() {
+            return maturityRating;
+        }
 
-    public Path getThumbnail() {
-        return thumbnail;
-    }
+        public Book.volumeInfo.imageLinks getImageLinks() {
+            return imageLinks;
+        }
 
-    public void setThumbnail(Path thumbnail) {
-        this.thumbnail = thumbnail;
-    }
+        public String getLanguage() {
+            return language;
+        }
 
-    public Path getGoogle_link() {
-        return google_link;
-    }
+        private String title;
+        private ArrayList<String> authors;
+        private String publisher;
+        private String publishedDate;
+        private String description;
+        private ArrayList<industryIdentifiers> industryIdentifiers;
+        private int pageCount;
+        private ArrayList<String> categories;
+        private int averageRating;
+        private int ratingsCount;
+        private String maturityRating;
+        private imageLinks imageLinks;
+        private String language;
 
-    public void setGoogle_link(Path google_link) {
-        this.google_link = google_link;
-    }
-
-    private String ISBN_13;
-    private String ISBN_10;
-    private String title;
-    private String author;
-    private String publisher;
-    private String language;
-    private Path small_thumbnail;
-    private Path thumbnail;
-    private Path google_link;
-
-    Book(String ISBN_13, String title, String author, String publisher, String language,
-         Path small_thumbnail, Path thumbnail, Path google_link) {
-        this.ISBN_13 = ISBN_13;
-        this.ISBN_10 = ISBN_13.substring(3, 12);
-        this.title = author;
-        this.publisher = publisher;
-        this.language = language;
-        this.small_thumbnail = small_thumbnail;
-        this.thumbnail = thumbnail;
-        this.google_link = google_link;
+        private static class industryIdentifiers {
+            private String type;
+            private String identifier;
+        }
+        private static class imageLinks {
+            private String smallThumbnail;
+            private String thumbnail;
+        }
     }
 }
