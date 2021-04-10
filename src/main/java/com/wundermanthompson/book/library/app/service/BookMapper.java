@@ -1,8 +1,10 @@
 package com.wundermanthompson.book.library.app.service;
 
+import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.databind.DeserializationFeature;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.wundermanthompson.book.library.app.model.Books;
+import org.springframework.stereotype.Service;
 
 import java.io.IOException;
 import java.net.MalformedURLException;
@@ -13,8 +15,9 @@ import java.util.ArrayList;
  * A class which serves a purpose of mapping JSONified class "model.Books.Book" to
  * a new class, which meets the requirements of the task.
  */
+@Service
 public class BookMapper {
-    public BookMapper() throws IOException {
+    public BookMapper() {
     }
 
     // Constructor to create a List of books from JSON file

@@ -6,13 +6,15 @@ import java.util.ArrayList;
 
 public class Book {
     Book(Books.Book b) {
+
         // setting proper ISBN - if type is other than ISBN_13, then it uses book's id
+        // Checks in the loop if there is ISBN_13 - if there is, sets hasISBN_13 to true
+        // if there's not - sets ID instead of ISBN
+        this.isbn = b.getId();
         for (Books.Book.volumeInfo.IndustryIdentifiers i : b.getVolumeInfo().getIndustryIdentifiers()) {
             if (i.getType().equals("ISBN_13")) {
                 this.isbn = i.getIdentifier();
-            }
-            else {
-                this.isbn = b.getVolumeInfo().getId();
+                break;
             }
         }
         this.title = b.getVolumeInfo().getTitle();
@@ -110,6 +112,7 @@ public class Book {
     }
 
     public ArrayList<String> getAuthors() {
+        if (authors == null) return new ArrayList<String>();
         return authors;
     }
 
@@ -133,17 +136,17 @@ public class Book {
         this.categories = categories;
     }
 
-    private String isbn;
-    private String title;
-    private String subtitle;
-    private String publisher;
+    private String isbn = "";
+    private String title = "";
+    private String subtitle = "";
+    private String publisher = "";
     private String publishedDate;
-    private String description;
+    private String description = "";
     private int pageCount;
-    private String thumbnailUrl;
-    private String language;
-    private String previewLink;
-    private double averageRating;
+    private String thumbnailUrl = "";
+    private String language = "";
+    private String previewLink = "";
+    private double averageRating = 0;
     private ArrayList<String> authors;
-    private ArrayList<String> categories;
+    private ArrayList<String> categories = new ArrayList<>();
 }
