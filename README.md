@@ -11,11 +11,11 @@ The project is built using JDK 11.
 I decided to use Spring Boot with Maven to create this app. Spring offers a handful toolset that speeds up work. Also, it’s simple and easy to understand. There is a good base of knowledge all around the Internet, so that also gives Spring an advantage. 
 
 ## Frameworks and libraries
-	1. Application frameworks
-	I decided not to use reactive programming due to lack of time. Whole project bases on Spring Boot.
-	2. Testing libraries
+1 Application frameworks 
+   I decided not to use reactive programming due to lack of time. Whole project bases on Spring Boot.
+2 Testing libraries
 	- JUnit 5 - it’s a standard
-	4. Others
+3 Others
 	- Jackson - for JSON serialization / deserialization; it’s more intuitive to me than GSon,
 	- Thymeleaf - although it’s capable of much more, I used it for generating error pages.
 	- HTTP.cat- did you notice?
