@@ -2,22 +2,23 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <link rel="stylesheet" href="/css/style.css">
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="../css/test.css">
     <link rel="preconnect" href="https://fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css2?family=Montserrat&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Lato&display=swap" rel="stylesheet">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <script src="../scripts/scripts.js"></script>
     <script src="../scripts/listeners.js"></script>
-    <title>WTT Book Library</title>
+    <title>Title</title>
 </head>
-<body onload="get_categories(); get_books()">
-    <div id="content">
+<body onload="display_book();">
+<div id="content">
     <nav>
         <ul>
             <li id="brand"><a href="../index.html">WTT Book Library</a></li>
-            <li><a href="#" id="active">Categories</a></li>
-            <li><a href="topauthors.html">Top Authors</a></li>
+            <li><a href="/html/categories.html">Categories</a></li>
+            <li><a href="/html/topauthors.html">Top Authors</a></li>
             <li id="search">
                 <form>
                     <label>
@@ -31,23 +32,21 @@
     </nav>
 
     <article>
-        <div id="category-dropdown">
-            <h2>Books list</h2>
-            <form>
-                <label for="categories-list">Choose a category:</label>
-                <select name="categories-list" id="categories-list">
-                    <option value="all" selected="selected">All books</option>
-                </select>
-            </form>
-        </div>
-
-        <div id="book-list">
+        <div id="book">
+            <img src="" id="cover" alt="book-cover">
+            <div class="container">
+                <h3 id="title">Title</h3>
+                <p id="description">Description</p>
+                <p id="date">Date</p>
+                <p id="authors">Authors</p>
+            </div>
         </div>
     </article>
-    </div>
-    <footer>
-        <p>Book Library Management Platform made by <span>Michał Wesoły</span> for <span>Wunderman Thompson Technology ©</span></p>
-        <p>03.04.2021</p>
-    </footer>
+</div>
+<footer>
+    <p>Book Library Management Platform made by <span>Michał Wesoły</span> for <span>Wunderman Thompson Technology ©</span></p>
+    <p>03.04.2021</p>
+</footer>
+    <script   src="https://code.jquery.com/jquery-3.6.0.min.js"   integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4="   crossorigin="anonymous"></script>
 </body>
 </html>

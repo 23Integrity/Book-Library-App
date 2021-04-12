@@ -6,22 +6,26 @@
     <link rel="preconnect" href="https://fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css2?family=Montserrat&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Lato&display=swap" rel="stylesheet">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="scripts/scripts.js"></script>
+    <script src="scripts/listeners.js"></script>
     <title>WTT Book Library</title>
 </head>
 <body>
+<div id="content">
     <nav>
         <ul>
             <li id="brand"><a href="#">WTT Book Library</a></li>
-            <li><a href="/get-categories">Categories</a></li>
+            <li><a href="/html/categories.html">Categories</a></li>
             <li><a href="/html/topauthors.html">Top Authors</a></li>
-            <li><a href="#">About</a></li>
-            <li>
+
+            <li id="search">
                 <form>
                     <label>
                         Search:
-                        <input type="text" placeholder="Enter your book's ISBN...">
+                        <input id="search-textarea" type="text" placeholder="Enter your book's ISBN...">
                     </label>
-                    <input type="submit">
+                    <a href="../html/book.html" id="search-btn" type="button">Search</a>
                 </form>
             </li>
         </ul>
@@ -33,19 +37,22 @@
         <ol>
             <li>
                 Use "Categories" tab to display categories. There you can choose one to filter all the books from chosen category.
+                Entering one of the books will show you its details.
             </li>
             <li>
                 Use "Top Author" tab to display top authors from our books database.
             </li>
-            <li>
-                Below you can see your recently viewed books.
-            </li>
         </ol>
-    </article>
+        <p>And here goes lorem ipsum to fill the rest of the page</p>
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed eros nibh, lobortis vel nulla eget, commodo euismod magna. Nunc risus libero, dictum sed risus in, finibus rutrum sem. Praesent nec nunc vel massa euismod laoreet. Quisque eu cursus lorem. Quisque eu quam quam. Morbi sed diam imperdiet, consectetur erat vitae, dapibus lectus. Nunc volutpat nec velit eget gravida. Pellentesque sed velit elementum, laoreet ligula eu, interdum lectus. Nulla sit amet arcu in erat imperdiet condimentum id non nisi. Praesent eros arcu, varius at dui eget, consectetur rutrum odio. Quisque iaculis lectus eu enim rhoncus auctor. Nullam scelerisque, urna aliquet convallis lacinia, mauris nulla mollis risus, vel tempor leo nisi eu nibh. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia curae;
 
+            Nunc accumsan auctor dolor, sit amet commodo nibh sollicitudin quis. Aenean eu ullamcorper leo. Curabitur tempus lacus in risus cursus, non bibendum quam elementum. Quisque eget tempor orci. Proin sit amet nulla vel velit aliquet tristique. Morbi euismod mi ac odio hendrerit mollis. Nunc elementum, velit eget laoreet lobortis, ligula erat fermentum turpis, sit amet sodales purus diam faucibus lorem. In lectus ligula, interdum at pellentesque eu, hendrerit vitae metus. Aenean laoreet molestie ipsum in commodo. Maecenas pellentesque efficitur erat, sit amet pellentesque nulla dapibus sit amet. Ut porttitor purus nec neque ultrices, a hendrerit dui luctus. Vestibulum libero magna, dignissim in lorem ut, vehicula pellentesque nisi. Morbi tincidunt ut elit id laoreet. Donec at lorem tincidunt, mollis massa in, euismod eros.</p>
+    </article>
+</div>
     <footer>
         <p>Book Library Management Platform made by <span>Michał Wesoły</span> for <span>Wunderman Thompson Technology ©</span></p>
         <p>03.04.2021</p>
     </footer>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"   integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4="   crossorigin="anonymous"></script>
 </body>
 </html>

@@ -6,27 +6,33 @@
     <link rel="preconnect" href="https://fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css2?family=Montserrat&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Lato&display=swap" rel="stylesheet">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="/scripts/scripts.js"></script>
     <title>WTT Book Library</title>
 </head>
-<body>
+<body onload="get_top_authors_list()">
+<div id="content">
 <nav>
     <ul>
         <li id="brand"><a href="../index.html">WTT Book Library</a></li>
         <li><a href="categories.html">Categories</a></li>
-        <li><a href="#">Top Authors</a></li>
-        <li><a href="#">About</a></li>
-        <li>
-            <form action="/details" method="get">
+        <li><a href="#" id="active">Top Authors</a></li>
+        <li id="search">
+            <form>
                 <label>
                     Search:
-                    <input type="text" id="isbn" name="isbn" placeholder="Enter your book's ISBN...">
+                    <input id="search-textarea" type="text" placeholder="Enter your book's ISBN...">
                 </label>
-                <input type="submit">
+                <a href="../html/book.html" id="search-btn" type="button">Search</a>
             </form>
         </li>
     </ul>
 </nav>
 
+<article>
+    <ol id="top-authors-list"><h1>Top Authors List</h1></ol>
+</article>
+</div>
 <footer>
     <p>Book Library Management Platform made by <span>Michał Wesoły</span> for <span>Wunderman Thompson Technology ©</span></p>
     <p>03.04.2021</p>

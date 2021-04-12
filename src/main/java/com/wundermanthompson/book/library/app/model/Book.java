@@ -1,17 +1,37 @@
-package com.wundermanthompson.book.library.app.service;
+package com.wundermanthompson.book.library.app.model;
 
-import com.wundermanthompson.book.library.app.model.Books;
+import com.fasterxml.jackson.annotation.JsonInclude;
 
 import java.util.ArrayList;
 
+
+/*
+ * Book template matching the requirements.
+ * Basically from enormous template from JSON, we go to Books.Book template (Books is a Collection of Book),
+ * to get a singular Book with matching fields.
+ */
+@JsonInclude(JsonInclude.Include.NON_NULL)
 public class Book {
-    Book(Books.Book b) {
+    private String isbn = "";
+    private String title = "";
+    private String subtitle = "";
+    private String publisher = "";
+    private String publishedDate;
+    private String description = "";
+    private int pageCount;
+    private String thumbnailUrl = "";
+    private String language = "";
+    private String previewLink = "";
+    private double averageRating = 0;
+    private ArrayList<String> authors;
+    private ArrayList<String> categories;
+
+
+    public Book(Books.BookTemplate b) {
 
         // setting proper ISBN - if type is other than ISBN_13, then it uses book's id
-        // Checks in the loop if there is ISBN_13 - if there is, sets hasISBN_13 to true
-        // if there's not - sets ID instead of ISBN
         this.isbn = b.getId();
-        for (Books.Book.volumeInfo.IndustryIdentifiers i : b.getVolumeInfo().getIndustryIdentifiers()) {
+        for (Books.BookTemplate.volumeInfo.IndustryIdentifiers i : b.getVolumeInfo().getIndustryIdentifiers()) {
             if (i.getType().equals("ISBN_13")) {
                 this.isbn = i.getIdentifier();
                 break;
@@ -136,17 +156,4 @@ public class Book {
         this.categories = categories;
     }
 
-    private String isbn = "";
-    private String title = "";
-    private String subtitle = "";
-    private String publisher = "";
-    private String publishedDate;
-    private String description = "";
-    private int pageCount;
-    private String thumbnailUrl = "";
-    private String language = "";
-    private String previewLink = "";
-    private double averageRating = 0;
-    private ArrayList<String> authors;
-    private ArrayList<String> categories = new ArrayList<>();
 }

@@ -10,48 +10,43 @@
     <script src="/scripts/scripts.js"></script>
     <title>WTT Book Library</title>
 </head>
-<body onload="fetch_data ();">
-<nav>
-    <ul>
-        <li id="brand"><a href="../index.html">WTT Book Library</a></li>
-        <li><a href="#">Categories</a></li>
-        <li><a href="topauthors.html">Top Authors</a></li>
-        <li><a href="#">About</a></li>
-        <li>
-            <form>
-                <label>
-                    Search:
-                    <input type="text" placeholder="Enter your book's ISBN...">
-                </label>
-                <input type="submit">
-            </form>
-        </li>
-    </ul>
-</nav>
-
-<article>
-    <div id="categories">
-        <h1>Category list</h1>
-        <ul id="category-list">
-            <li class="category-element">
-                Category
-            </li>
-            <li class="category-element">
-                Category
-            </li>
-            <li class="category-element">
-                Category
-            </li>
-            <li class="category-element">
-                Category
+<body onload="get_categories(); get_books()">
+    <div id="content">
+    <nav>
+        <ul>
+            <li id="brand"><a href="../index.html">WTT Book Library</a></li>
+            <li><a href="#" id="active">Categories</a></li>
+            <li><a href="topauthors.html">Top Authors</a></li>
+            <li id="search">
+                <form>
+                    <label>
+                        Search:
+                        <input id="search-textarea" type="text" placeholder="Enter your book's ISBN...">
+                    </label>
+                    <a href="../html/book.html" id="search-btn" type="button">Search</a>
+                </form>
             </li>
         </ul>
-    </div>
-</article>
+    </nav>
 
-<footer>
-    <p>Book Library Management Platform made by <span>Michał Wesoły</span> for <span>Wunderman Thompson Technology ©</span></p>
-    <p>03.04.2021</p>
-</footer>
+    <article>
+        <div id="category-dropdown">
+            <h2>Books list</h2>
+            <form>
+                <label for="categories-list">Choose a category:</label>
+                <select name="categories-list" id="categories-list">
+                    <option value="all" selected="selected">All books</option>
+                </select>
+            </form>
+        </div>
+
+        <div id="book-list">
+        </div>
+    </article>
+    </div>
+    <footer>
+        <p>Book Library Management Platform made by <span>Michał Wesoły</span> for <span>Wunderman Thompson Technology ©</span></p>
+        <p>03.04.2021</p>
+    </footer>
 </body>
 </html>

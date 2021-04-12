@@ -1,19 +1,19 @@
 package com.wundermanthompson.book.library.app.service;
 
-import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.databind.DeserializationFeature;
 import com.fasterxml.jackson.databind.ObjectMapper;
+import com.fasterxml.jackson.databind.SerializationFeature;
+import com.wundermanthompson.book.library.app.model.Book;
 import com.wundermanthompson.book.library.app.model.Books;
 import org.springframework.stereotype.Service;
 
 import java.io.IOException;
-import java.net.MalformedURLException;
 import java.net.URL;
 import java.util.ArrayList;
 
 /*
- * A class which serves a purpose of mapping JSONified class "model.Books.Book" to
- * a new class, which meets the requirements of the task.
+ * A class which serves a purpose of mapping JSONified class "Books.BookTemplate" to
+ * a new class, which meets the requirements of the task (which is Book).
  */
 @Service
 public class BookMapper {
@@ -28,7 +28,7 @@ public class BookMapper {
                     .configure(DeserializationFeature.FAIL_ON_UNKNOWN_PROPERTIES, false);
             final Books books = mapper.readValue(new URL("file:src/main/resources/static/json/books.json"), Books.class);
 
-            for (Books.Book b : books.getItems()) {
+            for (Books.BookTemplate b : books.getItems()) {
                 bookList.add(new Book(b));
             }
         } catch (IOException e) {

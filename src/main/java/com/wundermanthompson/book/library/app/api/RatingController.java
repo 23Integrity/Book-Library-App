@@ -2,7 +2,7 @@ package com.wundermanthompson.book.library.app.api;
 
 import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.ObjectMapper;
-import com.wundermanthompson.book.library.app.service.Book;
+import com.wundermanthompson.book.library.app.model.Book;
 import com.wundermanthompson.book.library.app.service.BookMapper;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
@@ -10,16 +10,27 @@ import org.springframework.web.bind.annotation.RestController;
 import java.util.ArrayList;
 import java.util.Comparator;
 
+/*
+ * Class that responds with top author list;
+ * It creates an author list based on provided JSON, then calculates their rating
+ * basing on all their books in JSON, then sorts them in descending order.
+ * Such list is then returned stringified to client.
+ */
 @RestController
 public class RatingController {
-    @RequestMapping(value = "/get-top-authors")
+    // Endpoint for returning a sorted list of top authors
+    @RequestMapping(value = "/top-authors")
     public String getTopAuthorsList() throws JsonProcessingException {
         ArrayList<String> topAuthorsNameList = new ArrayList<>();
         ArrayList<Author> topAuthorsList = new ArrayList<>();
         ArrayList<Book> bookList = BookMapper.getMappedBookList();
 
+        // in a list of all books, find all authors
+        // and add them to their names' list - because we look for String which is their name
+        // - if the list doesn't contain their name already. And if it doesn't, it creates a new Author
+        // in topAuthorsList. Then it gets sorted and returned
         for (Book b : bookList) {
-            if (!b.getAuthors().isEmpty()) {
+            if (b.getAverageRating() > 0) {
                 for (String a : b.getAuthors()) {
                     if (!topAuthorsNameList.contains(a)) {
                         topAuthorsNameList.add(a);
@@ -32,10 +43,14 @@ public class RatingController {
         return new ObjectMapper().writeValueAsString(topAuthorsList);
     }
 
+    // Author class for managing the output string
+    // It bases mainly on its two attributes: author (which is author's name) and averageRating
+    // On declaration it calculates author's averageRating basing on provided JSON.
+    // Implements Comparable in order to use Collections.sort() method.
     private static class Author implements Comparable<Author> {
         Author(String authorName) {
             author = authorName;
-            calculateAverageRating();
+            this.averageRating = calculateAverageRating();
         }
 
         public String getAuthor() {
@@ -57,7 +72,7 @@ public class RatingController {
         }
 
         // For some reason, works only for authors with only 1 book
-        private void calculateAverageRating() {
+        private double calculateAverageRating() {
             ArrayList<Book> books = BookMapper.getMappedBookList();
             ArrayList<Book> authorBooks = new ArrayList<>();
             ArrayList<Double> ratings = new ArrayList<>();
@@ -65,23 +80,26 @@ public class RatingController {
 
             // Finding specific author's books
             for (Book b : books) {
-                if (b.getAuthors().contains(this.author)) {
+                if (b.getAuthors().contains(author)) {
                     authorBooks.add(b);
                 }
             }
             // Getting all their ratings into an array
             for (Book b : authorBooks) {
-                ratings.add(b.getAverageRating());
+                if (b.getAverageRating() > 0)
+                    ratings.add(b.getAverageRating());
             }
             // Summing all the ratings into double variable
             for (Double r : ratings) {
                 averageRating += r;
             }
             // returning the average: rating sum / amount of ratings
-            this.averageRating = averageRating / ratings.size();
+            if (ratings.size() > 0)
+                return averageRating / ratings.size();
+            return 0;
         }
 
         private final String author;
-        private double averageRating = 0;
+        private final double averageRating;
     }
 }

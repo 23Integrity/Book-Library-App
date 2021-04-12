@@ -1,30 +1,33 @@
 package com.wundermanthompson.book.library.app.model;
 
 import com.fasterxml.jackson.annotation.JsonAutoDetect;
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.context.annotation.Bean;
 import org.springframework.stereotype.Component;
-import org.springframework.stereotype.Repository;
 
 import java.io.Serializable;
 import java.util.ArrayList;
 
+
+/*
+ * Books class is a collection of Books.Book - so of objects from JSON, which are books.
+ * Used for mapping.
+ */
 @Component
 @JsonAutoDetect(fieldVisibility = JsonAutoDetect.Visibility.ANY)
 public class Books implements Serializable {
-    private ArrayList<Book> items;
-    public ArrayList<Book> getItems() {
+    private ArrayList<BookTemplate> items;
+    public ArrayList<BookTemplate> getItems() {
         return items;
     }
 
+    // Singular book from JSON; ignoring useless fields
     @Component
     @JsonAutoDetect(fieldVisibility = JsonAutoDetect.Visibility.ANY)
-    public static class Book implements Serializable {
+    public static class BookTemplate implements Serializable {
         private String id;
-        private Book.volumeInfo volumeInfo;
+        private BookTemplate.volumeInfo volumeInfo;
 
         public String getId() { return id; }
-        public Book.volumeInfo getVolumeInfo() {
+        public BookTemplate.volumeInfo getVolumeInfo() {
             return volumeInfo;
         }
 
@@ -35,12 +38,12 @@ public class Books implements Serializable {
             private String publisher;
             private String publishedDate;
             private String description;
-            private ArrayList<Book.volumeInfo.IndustryIdentifiers> industryIdentifiers = new ArrayList<>();
+            private ArrayList<BookTemplate.volumeInfo.IndustryIdentifiers> industryIdentifiers = new ArrayList<>();
             private int pageCount;
             private ArrayList<String> categories = new ArrayList<>();
             private double averageRating;
             private String maturityRating;
-            private Book.volumeInfo.ImageLinks imageLinks;
+            private BookTemplate.volumeInfo.ImageLinks imageLinks;
             private String language;
             private String previewLink;
 
