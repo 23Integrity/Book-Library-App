@@ -36,4 +36,4 @@ I focused the project around MVC pattern - it’s simple and suited the task nic
 To build the app, use `mvn clean package spring-boot:repackage` command inside Book-Library-App folder
 To run it, issue `java -jar Book-Library-App-0.0.1-SNAPSHOT.jar` command in /target directory (or just `java -jar target/Book-Library-App-0.0.1-SNAPSHOT.jar`)
 
-The result can be seen on `localhost:8080`, endpoint go right after the port.
+The result can be seen on `localhost:8080`, endpoints go right after the port.
