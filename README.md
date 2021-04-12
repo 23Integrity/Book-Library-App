@@ -1,16 +1,5 @@
 
 # Book Library Management Application Instructions
-## Preface
-## Build tools
-## Frameworks and libraries
-### 	Application frameworks
-### 	Testing libraries
-### 	Others
-
-## Design Patterns
-## Endpoints
-## Building and running
-
 
 ## Preface
 Tried my best to create an app basing on provided requirements. It might be imperfect, but I put all I know to create it. I would be glad to hear what could be done better, where I made mistakes so I can improve myself further.
