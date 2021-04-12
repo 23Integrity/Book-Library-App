@@ -2,7 +2,6 @@ package com.wundermanthompson.book.library.app.service;
 
 import com.fasterxml.jackson.databind.DeserializationFeature;
 import com.fasterxml.jackson.databind.ObjectMapper;
-import com.fasterxml.jackson.databind.SerializationFeature;
 import com.wundermanthompson.book.library.app.model.Book;
 import com.wundermanthompson.book.library.app.model.Books;
 import org.springframework.stereotype.Service;
