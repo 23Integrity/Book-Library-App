@@ -1,27 +1,21 @@
 
-# Book Library Management Application Instructions
-
-## Preface
-Tried my best to create an app basing on provided requirements. It might be imperfect, but I put all I know to create it. I would be glad to hear what could be done better, where I made mistakes so I can improve myself further.
-I focused on providing good backend resources more than designing a better frontend. Using React or Vue.js would make this site work and look much better without any doubt. 
-With more time to work on it, I’m certain I would give it a try.  
+# Book Library Management Application
 
 ## Build tools
 The project is built using JDK 11.
-I decided to use Spring Boot with Maven to create this app. Spring offers a handful toolset that speeds up work. Also, it’s simple and easy to understand. There is a good base of knowledge all around the Internet, so that also gives Spring an advantage. 
+I decided to use Spring Boot with Maven to create this app. Spring offers a handful toolset that speeds up work.
+Also, it’s simple and easy to understand.
+There is a good base of knowledge all around the Internet, so that also gives Spring an advantage. 
 
 ## Frameworks and libraries
 1 Application frameworks 
-   I decided not to use reactive programming due to lack of time. Whole project bases on Spring Boot.
+   - Spring Boot
 2 Testing libraries
-	- JUnit 5 - it’s a standard
+	- JUnit 5 - provided in Spring Boot Test
 3 Others
-	- Jackson - for JSON serialization / deserialization; it’s more intuitive to me than GSon,
+	- Jackson - for JSON serialization / deserialization,
 	- Thymeleaf - although it’s capable of much more, I used it for generating error pages.
-	- HTTP.cat- did you notice?
-
-## Design patterns
-I focused the project around MVC pattern - it’s simple and suited the task nicely. 
+	- HTTP.cat
 
 ## Endpoints
 - `/details` endpoint, requiring parameter „isbn” (`/details?isbn=`), providing a book user was searching for, basing on provided ISBN 13. If the book doesn’t have such number, then user has to look for by book’s ID. If there’s no such book, throws a 404 Not Found Error via WrongIdException.
