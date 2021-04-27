@@ -8,11 +8,11 @@
 		<version>2.4.4</version>
 		<relativePath/> <!-- lookup parent from repository -->
 	</parent>
-	<groupId>com.wundermanthompson</groupId>
+	<groupId>com.michalwesoly</groupId>
 	<artifactId>Book-Library-App</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
 	<name>Book-Library-App</name>
-	<description>Book Library Management Platform for Wunderman Thompson Technology</description>
+	<description>Book Library Management Platform</description>
 	<properties>
 		<java.version>11</java.version>
 	</properties>
