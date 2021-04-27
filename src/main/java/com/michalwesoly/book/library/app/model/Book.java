@@ -1,4 +1,4 @@
-package com.wundermanthompson.book.library.app.model;
+package com.michalwesoly.book.library.app.model;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
 
@@ -12,17 +12,17 @@ import java.util.ArrayList;
  */
 @JsonInclude(JsonInclude.Include.NON_NULL)
 public class Book {
-    private String isbn = "";
-    private String title = "";
-    private String subtitle = "";
-    private String publisher = "";
+    private String isbn;
+    private String title;
+    private String subtitle;
+    private String publisher;
     private String publishedDate;
-    private String description = "";
+    private String description;
     private int pageCount;
-    private String thumbnailUrl = "";
-    private String language = "";
-    private String previewLink = "";
-    private double averageRating = 0;
+    private String thumbnailUrl;
+    private String language;
+    private String previewLink;
+    private double averageRating;
     private ArrayList<String> authors;
     private ArrayList<String> categories;
 
@@ -132,7 +132,7 @@ public class Book {
     }
 
     public ArrayList<String> getAuthors() {
-        if (authors == null) return new ArrayList<String>();
+        if (authors == null) return new ArrayList<>();
         return authors;
     }
 

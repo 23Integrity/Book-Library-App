@@ -1,4 +1,4 @@
-package com.wundermanthompson.book.library.app;
+package com.michalwesoly.book.library.app;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;

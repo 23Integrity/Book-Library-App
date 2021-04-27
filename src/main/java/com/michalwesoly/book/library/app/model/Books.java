@@ -1,4 +1,4 @@
-package com.wundermanthompson.book.library.app.model;
+package com.michalwesoly.book.library.app.model;
 
 import com.fasterxml.jackson.annotation.JsonAutoDetect;
 import org.springframework.stereotype.Component;

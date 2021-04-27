@@ -1,7 +1,7 @@
-package com.wundermanthompson.book.library.app;
+package com.michalwesoly.book.library.app;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
-import com.wundermanthompson.book.library.app.service.BookMapper;
+import com.michalwesoly.book.library.app.service.BookMapper;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;

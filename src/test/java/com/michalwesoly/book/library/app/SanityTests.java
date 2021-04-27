@@ -1,6 +1,6 @@
-package com.wundermanthompson.book.library.app;
+package com.michalwesoly.book.library.app;
 
-import com.wundermanthompson.book.library.app.api.*;
+import com.michalwesoly.book.library.app.api.*;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
@@ -26,27 +26,27 @@ public class SanityTests {
     RatingController ratingController = new RatingController();
 
     @Test
-    public void allBooksControllerShouldNotBeNull() throws Exception {
+    public void allBooksControllerShouldNotBeNull() {
         assertThat(allBooksController).isNotNull();
     }
 
     @Test
-    public void bookDetailsControllerShouldNotBeNull() throws Exception {
+    public void bookDetailsControllerShouldNotBeNull() {
         assertThat(bookDetailsController).isNotNull();
     }
 
     @Test
-    public void bookVolumeControllerShouldNotBeNull() throws Exception {
+    public void bookVolumeControllerShouldNotBeNull()  {
         assertThat(bookVolumeController).isNotNull();
     }
 
     @Test
-    public void categoriesControllerShouldNotBeNull() throws Exception {
+    public void categoriesControllerShouldNotBeNull() {
         assertThat(categoriesController).isNotNull();
     }
 
     @Test
-    public void ratingControllerShouldNotBeNull() throws Exception {
+    public void ratingControllerShouldNotBeNull() {
         assertThat(ratingController).isNotNull();
     }
 }

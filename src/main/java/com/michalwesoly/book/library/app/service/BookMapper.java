@@ -1,9 +1,9 @@
-package com.wundermanthompson.book.library.app.service;
+package com.michalwesoly.book.library.app.service;
 
 import com.fasterxml.jackson.databind.DeserializationFeature;
 import com.fasterxml.jackson.databind.ObjectMapper;
-import com.wundermanthompson.book.library.app.model.Book;
-import com.wundermanthompson.book.library.app.model.Books;
+import com.michalwesoly.book.library.app.model.Book;
+import com.michalwesoly.book.library.app.model.Books;
 import org.springframework.stereotype.Service;
 
 import java.io.IOException;
