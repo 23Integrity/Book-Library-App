@@ -8,14 +8,14 @@ Also, it’s simple and easy to understand.
 There is a good base of knowledge all around the Internet, so that also gives Spring an advantage. 
 
 ## Frameworks and libraries
-1 Application frameworks 
-   - Spring Boot
-2 Testing libraries
-	- JUnit 5 - provided in Spring Boot Test
-3 Others
-	- Jackson - for JSON serialization / deserialization,
-	- Thymeleaf - although it’s capable of much more, I used it for generating error pages.
-	- HTTP.cat
+### 1 Application frameworks 
+- Spring Boot
+### 2 Testing libraries
+- JUnit 5 - provided in Spring Boot Test
+### 3 Others
+- Jackson - for JSON serialization / deserialization,
+- Thymeleaf - although it’s capable of much more, I used it for generating error pages.
+- HTTP.cat
 
 ## Endpoints
 - `/details` endpoint, requiring parameter „isbn” (`/details?isbn=`), providing a book user was searching for, basing on provided ISBN 13. If the book doesn’t have such number, then user has to look for by book’s ID. If there’s no such book, throws a 404 Not Found Error via WrongIdException.
